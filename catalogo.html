@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Catálogo de Productos - Ademax Papelería</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+        <link rel="manifest" href="img/favicon/site.webmanifest">
+        <style>
+            body {
+                background-color: #f5f5f5;
+                color: #343a40;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            .header {
+                background-color: #007bff;
+                color: white;
+                padding: 15px 20px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+            }
+
+            .header h1 {
+                margin: 0;
+                margin-left: 60px;
+                font-size: 1.8rem;
+            }
+
+            .navbar-nav .nav-link {
+                color: white;
+                margin-left: 20px;
+                font-size: 1.1rem;
+                transition: color 0.3s;
+            }
+
+            .navbar-nav .nav-link:hover {
+                color: #ffd700;
+            }
+
+            .navbar-nav {
+                margin-right: 60px;
+            }
+
+            @media (max-width: 768px) {
+                .navbar-nav {
+                    margin: 0;
+                    padding: 10px 0;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                .navbar-toggler {
+                    margin-right: 60px;
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    display: block;
+                }
+
+                .navbar-toggler .navbar-toggler-icon {
+                    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.55)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* Icono del menú */
+                }
+
+                .navbar-nav .nav-link {
+                    margin: 10px 0;
+                    display: block;
+                }
+            }
+
+            .product-card {
+                transition: transform 0.3s, box-shadow 0.3s;
+                border: none;
+                border-radius: 15px;
+                overflow: hidden;
+            }
+
+            .product-card img {
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+            }
+
+            .product-card:hover {
+                transform: scale(1.05);
+                box-shadow: 0 6px 20px rgba(0, 123, 255, 0.2);
+            }
+
+            .product-card h5 {
+                font-size: 1.25rem;
+                color: #007bff;
+            }
+
+            .product-card p {
+                font-size: 0.95rem;
+                color: #6c757d;
+            }
+
+            .product-card .card-body {
+                padding: 1.25rem;
+            }
+
+            .search-container {
+                margin-bottom: 2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #searchInput {
+                width: 60%;
+                border-radius: 50px;
+                padding: 0.5rem 1rem;
+                border: 1px solid #ced4da;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+                transition: box-shadow 0.3s;
+            }
+
+            #searchInput:focus {
+                box-shadow: 0 4px 20px rgba(0, 123, 255, 0.2);
+                border-color: #007bff;
+            }
+
+            h2 {
+                color: #007bff;
+                font-weight: bold;
+            }
+
+            .whatsapp-btn {
+                background-color: #25D366;
+                color: #fff;
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 999;
+            }
+
+            .whatsapp-btn:hover {
+                transform: scale(1.1);
+                box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+            }
+
+            .whatsapp-btn i {
+                font-size: 24px;
+            }
+
+            @media (max-width: 768px) {
+                .whatsapp-btn {
+                    width: 50px;
+                    height: 50px;
+                    bottom: 10px;
+                    right: 10px;
+                }
+
+                .whatsapp-btn i {
+                    font-size: 20px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+
+        <header class="header d-flex justify-content-between align-items-center p-2">
+            <h1 class="logo">Ademax Papelería</h1>
+            <nav class="navbar navbar-expand-lg">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="catalogo.html">Catálogo de productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <a href="https://wa.me/8494587771" class="whatsapp-btn position-fixed bottom-0 end-0 m-4">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    
+        <main class="container my-5">
+            <h2 class="text-center mb-5">Catálogo de productos</h2>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" class="form-control" placeholder="Buscar por categoría o marca">
+            </div>
+            
+            <div class="row" id="catalogo"></div>
+        </main>
+
+        <script>
+            fetch('products.json')
+                .then(response => response.json())
+                .then(data => {
+                    mostrarProductos(data);
+                });
+
+            function mostrarProductos(productos) {
+                const catalogo = document.getElementById("catalogo");
+                catalogo.innerHTML = "";
+
+                productos.forEach(producto => {
+                    const card = document.createElement("div");
+                    card.className = "col-md-4 mb-4";
+                    card.innerHTML = `
+                        <div class="card product-card">
+                            <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+                            <div class="card-body">
+                                <h5 class="card-title">${producto.nombre}</h5>
+                                <p class="card-text">${producto.descripcion}</p>
+                                <p class="card-text"><strong>${producto.precio}</strong></p>
+                                <p class="card-text"><small class="text-muted">Marca: ${producto.marca}</small></p>
+                            </div>
+                        </div>
+                    `;
+                    catalogo.appendChild(card);
+                });
+
+                const searchInput = document.getElementById("searchInput");
+                searchInput.addEventListener("keyup", function() {
+                    const value = this.value.toLowerCase();
+                    const cards = catalogo.getElementsByClassName("card");
+                    for (let i = 0; i < cards.length; i++) {
+                        const title = cards[i].getElementsByClassName("card-title")[0].innerText.toLowerCase();
+                        const brand = cards[i].getElementsByClassName("text-muted")[0].innerText.toLowerCase();
+                        if (title.includes(value) || brand.includes(value)) {
+                            cards[i].style.display = "";
+                        } else {
+                            cards[i].style.display = "none";
+                        }
+                    }
+                });
+            }
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
+
+

@@ -1,0 +1,72 @@
+[
+    {
+        "nombre": "Lápiz HB",
+        "descripcion": "Lápiz de grafito HB para escritura general",
+        "precio": "$0.50",
+        "marca": "Faber-Castell",
+        "imagen": "img/products/lapizhb.jpeg"
+    },
+    {
+        "nombre": "Bolígrafo azul",
+        "descripcion": "Bolígrafo de tinta azul de punta media",
+        "precio": "$1.20",
+        "marca": "BIC",
+        "imagen": "img/products/boliazulbic.jpeg"
+    },
+    {
+        "nombre": "Cuaderno espiral",
+        "descripcion": "Cuaderno de 100 hojas con espiral",
+        "precio": "$3.50",
+        "marca": "Norma",
+        "imagen": "img/products/espiralnorma.jpg"
+    },
+    {
+        "nombre": "Grapadora",
+        "descripcion": "Grapadora de escritorio para 20 hojas",
+        "precio": "$8.99",
+        "marca": "Rapesco",
+        "imagen": "img/products/rapescograpa.jpeg"
+    },
+    {
+        "nombre": "Papel A4",
+        "descripcion": "Resma de papel A4 de 500 hojas",
+        "precio": "$5.99",
+        "marca": "Navigator",
+        "imagen": "img/products/papela4.jpeg"
+    },
+    {
+        "nombre": "Marcadores fluorescentes",
+        "descripcion": "Set de 5 marcadores fluorescentes",
+        "precio": "$4.50",
+        "marca": "Stabilo",
+        "imagen": "img/products/marcadoresstabilo.jpeg"
+    },
+    {
+        "nombre": "Calculadora científica",
+        "descripcion": "Calculadora científica con 240 funciones",
+        "precio": "$15.99",
+        "marca": "Casio",
+        "imagen": "img/products/calcientcasio.jpg"
+    },
+    {
+        "nombre": "Archivador de palanca",
+        "descripcion": "Archivador de palanca tamaño folio",
+        "precio": "$3.75",
+        "marca": "Esselte",
+        "imagen": "img/products/archivador.jpg"
+    },
+    {
+        "nombre": "Ratón inalámbrico",
+        "descripcion": "Ratón óptico inalámbrico",
+        "precio": "$12.99",
+        "marca": "Logitech",
+        "imagen": "img/products/logitechr.jpeg"
+    },
+    {
+        "nombre": "Post-it",
+        "descripcion": "Pack de 6 blocs de notas adhesivas",
+        "precio": "$5.25",
+        "marca": "3M",
+        "imagen": "img/products/postit3m.jpeg"
+    }
+]
